@@ -18,10 +18,12 @@
  */
 module.exports = function(app) {
 	
-	app.set('port', process.env.PORT || 3000);
+	const port = process.env.PORT || 3000
+
+	app.set('port', port);
 	
-	app.listen(app.get('port'), function () {
-		console.log('Example app listening on port 3000!');
+	app.listen(port, function () {
+		console.log(`Server listening on port ${port}!`);
 	});
 
 };

@@ -13,19 +13,20 @@
 /**
  * Module dependencies.
  */
-var path = require('path');
-var dotenv = require('dotenv');
-var express = require('express');
+const path = require('path');
+const dotenv = require('dotenv');
+const express = require('express');
+const datastores = require('../datastores');
 
 /**
  * Load environment settings.
  */
-dotenv.load();
+dotenv.config();
 
 /**
  * Instantiate express.
  */
-var app = express();
+const app = express();
 
 /**
  * Set config on express instance.
@@ -41,6 +42,11 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
  * Require application level middlewares.
  */
 require('../middlewares/main')(app);
+
+/**
+ * Make datastores available.
+ */
+app.set('datastores', datastores);
 
 /**
  * Bind app with the views.

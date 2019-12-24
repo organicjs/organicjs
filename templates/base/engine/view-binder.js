@@ -13,9 +13,9 @@
 /**
  * Module dependencies.
  */
-var fs = require('fs');
-var path = require('path');
-var consolidate = require('consolidate');
+const fs = require('fs');
+const path = require('path');
+const consolidate = require('consolidate');
 // var pathExists = require('path-exists');
 
 /**
@@ -32,6 +32,13 @@ module.exports = function(app) {
 
     /**
      * Set templating engine.
+     * 
+     * Not all template engines have out-of-the-box support 
+     * for Express, nor do they have the same API.
+     * 
+     * Consolidate helps you defining a single way to call 
+     * multiple template engines, so you can switch your 
+     * template engine seamlessly and without effort.
      */ 
     app.engine('html', consolidate[config.express['view engine']]);
     app.set('view engine', config.express.extension);

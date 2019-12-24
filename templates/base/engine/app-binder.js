@@ -13,8 +13,8 @@
 /**
  * Module ependencies.
  */
-var path = require('path');
-var express = require('express');
+const path = require('path');
+const express = require('express');
 
 /**
  * @var Holds route prefixes and their targets.
@@ -105,7 +105,7 @@ AppBinder.prototype.getExpressRouter = function() {
 
 		router[method](path, handler[action]);
 	});
-	
+
 	return router;
 };
 

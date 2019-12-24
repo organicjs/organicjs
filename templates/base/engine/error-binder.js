@@ -17,28 +17,25 @@
  * @public
  */
 
-module.exports = function(app) {
-	
+module.exports = function (app) {
+
 	/**
-	 * Set 404
+	 * Set 404.
 	 */
-	app.use(function(req, res, next) {
+	app.use(function (req, res, next) {
 		var err = new Error('Not Found');
 		err.status = 404;
 		next(err);
 	});
-	   
+
 	/**
 	 * Set error handler.
 	 */
-	app.use(function(err, req, res) {
-	  // set locals, only providing error in development
-	  res.locals.message = err.message;
-	  res.locals.error = req.app.get('env') === 'development' ? err : {};
-	
-	  // render the error page
-	  res.status(err.status || 500);
-	  res.send('404 Not Found');
+	app.use(function (err, req, res) {
+		res.locals.message = err.message;
+		res.locals.error = process.env.NODE_ENV === 'development' ? err : {};
+		res.status(err.status || 500);
+		res.send('error');
 	});
-	
+
 };
