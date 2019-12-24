@@ -6,7 +6,7 @@
       "name": "Pradeep T.",
       "email": "pt21388@gmail.com"
     }
-  ]
+  ],
   "scripts": {
     "start": "node ./index"
   },
