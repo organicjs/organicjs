@@ -1,13 +1,46 @@
-<style>
-    h1 {
-        font-family: sans-serif;
-        font-weight: 100;
-    }
-    h1 a {
-        color: #09f;
-    }
-</style>
+<html>
 
-<h1>
-    Welcome to <a href="https://organicjs.github.io/site/"><%= data %></a>
-</h1>
+<head>
+    <title>OrganicJS | MVC Web Framework</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            font-family: monospace;
+        }
+
+        .container {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        a {
+            color: #09f
+        }
+
+        h1 {
+            color: #009688;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>
+            <%= data %>
+        </h1>
+        <p>
+            MVC Web Framework for ExpressJS Enthusiasts
+        </p>
+        <p>
+            Docs: <a href="https://organicjs.github.io/site/docs/" target="_blank">https://organicjs.github.io/site/docs/</a>
+        </p>
+    </div>
+</body>
+
+</html>
