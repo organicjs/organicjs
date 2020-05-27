@@ -16,7 +16,6 @@
 const path = require('path');
 const dotenv = require('dotenv');
 const express = require('express');
-const datastores = require('../datastores');
 
 /**
  * Load environment settings.
@@ -42,11 +41,6 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
  * Require application level middlewares.
  */
 require('../middlewares/main')(app);
-
-/**
- * Make datastores available.
- */
-app.set('datastores', datastores);
 
 /**
  * Bind app with the views.
